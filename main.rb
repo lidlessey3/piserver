@@ -1,5 +1,12 @@
 require 'sinatra'
 
+set :public_folder, __dir__ + '/html'
+
 get '/' do
-  'Hello world'
+  @index = File.read("html/index.html")
+  erb("<%= @index %>")
+end
+
+get '/services/:serviceName' do
+  "sevice #{params['serviceName']}"
 end
