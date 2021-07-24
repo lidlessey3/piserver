@@ -11,7 +11,7 @@ body {
     margin: auto;
     margin-top: 100px;
     padding: 10px;
-    transition: 200ms ease-in-out;
+    transition: 300ms ease-in-out;
 }
 
 #login-box:hover {
