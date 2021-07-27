@@ -39,10 +39,10 @@ post '/login' do
   server_hash = Digest::SHA1.hexdigest(password + @r_string)  #computes the correct hash
   client_hash = params[:hash] #gets the client hash
 
-  if(server_hash == client_hash)
+  if(server_hash == client_hash)  #if they match the user is authenticated
     session[:logged_in] = true
     redirect '/dashboard'
-  else
+  else  #otherwise it is redirected to the error page
     redirect '/login-error'
   end
 
@@ -54,7 +54,7 @@ get '/login-error' do
 end
 
 get '/dashboard' do
-  if(!session[:logged_in])
+  if(!session[:logged_in])  #check if the user is logged in or not, if they are not they get redirected to the login page
     redirect '/'
   end
 
