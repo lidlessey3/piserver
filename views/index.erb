@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="index.css" />
+
+    <!-- this is the library used to compute the hash of the password -->
+    <script type="text/javascript" src="http://pajhome.org.uk/crypt/md5/sha1.js"></script>
+
+    <!-- this is the function that will be called once the password is submitted -->
+    <script type ="text/javascript"> 
+        function login() {
+            var pass = document.getElementById('pass').value;
+            var string = document.getElementById('string').value;
+            document.getElementById('hash').value = hex_sha1(pass + string);
+            document.getElementById('actualform').submit();
+        }
+    </script>
+</head>
+
+<body>
+    <div id="login-box">
+        <h3>Welcome to your Pi dashboard</h3>
+        <p>Password</p>
+        <form action="javascript:login()" method="POST">
+            <input type="hidden" id="string" value="<%= @r_string %>" />
+            <input type="password" name="pass" id="pass" /> <br />
+            <input type="submit" name="submit" value="Login" />
+        </form>
+        <form action="/login" method="POST" id="actualform">
+            <input type="hidden" id="hash" name="hash" />
+        </form>
+    </div>
+</body>
+
+</html>

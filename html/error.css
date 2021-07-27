@@ -1,0 +1,30 @@
+body {
+    background-color: whitesmoke;
+}
+
+#error-box {
+    background-color: lightcoral;
+    box-shadow: 1px 1px 5px darkgrey;
+    width: fit-content;
+    border-radius: 5px;
+    border: lightgrey;
+    margin: auto;
+    margin-top: 100px;
+    padding: 10px;
+    transition: 300ms ease-in-out;
+}
+
+#error-box:hover {
+    box-shadow: 1px 1px 6px grey;
+}
+
+#error-box h3 {
+    font-family: serif;
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+#error-box p {
+    font-family: serif;
+    font-size: 11pt;
+}
