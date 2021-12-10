@@ -1,9 +1,16 @@
 require 'sinatra'
 require 'digest/sha1'
+require 'json'
 
 enable :sessions
 
 set :public_folder, __dir__ + '/html'
+set :bind, '0.0.0.0'
+set :port, '80'
+
+
+json_hash = JSON.parse(File.read("services.json"), {object_class: OpenStruct})  #reads the json file with all the data
+keys = json_hash.instance_variable_get("@table").keys  #gets all the keys
 
 get '/' do
   @r_string = ""
@@ -58,6 +65,9 @@ get '/dashboard' do
     redirect '/'
   end
 
-  "Success :)"
+  @json_hash = json_hash
+  @keys = keys
+
+  erb :dashboard
 
 end

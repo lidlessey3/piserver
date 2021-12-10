@@ -1,0 +1,50 @@
+{
+    "syncthing": {
+        "display-name": "Syncthing",
+        "startable": true,
+        "stoppable": true,
+        "status": true,
+        "visitable": true,
+        "start-cmd": "sudo systemctl start syncthing",
+        "stop-cmd": "sudo systemctl stop syncthing",
+        "status-cmd": "sudo systemctl status syncthing",
+        "website": "localhost:8384"
+    },
+    "flood": {
+        "display-name": "Flood",
+        "startable": true,
+        "stoppable": true,
+        "status": true,
+        "visitable": true,
+        "start-cmd": "sudo systemctl start flood",
+        "stop-cmd": "sudo systemctl stop flood",
+        "status-cmd": "sudo systemctl status flood",
+        "website": "localhost:3000"
+    },
+    "ftp": {
+        "display-name": "FTP",
+        "startable": true,
+        "stoppable": true,
+        "status": true,
+        "visitable": false,
+        "start-cmd": "sudo systemctl start ftpd",
+        "stop-cmd": "sudo systemctl stop ftpd",
+        "status-cmd": "sudo systemctl status ftpd"
+    },
+    "steam": {
+        "display-name": "Steam",
+        "startable": true,
+        "stoppable": false,
+        "status": false,
+        "visitable": false,
+        "start-cmd": "steam-play"
+    },
+    "kodi": {
+        "display-name": "Kodi",
+        "startable": true,
+        "stoppable": false,
+        "status": false,
+        "visitable": false,
+        "start-cmd": "kodi"
+    }
+}

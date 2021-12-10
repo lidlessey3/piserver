@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="dashboard.css" />
+    </head>
+
+    <body>
+        <div class="header"><h3>Dashboard</h3></div>
+        <div class="wrapper">
+            <% for service in @keys %>
+                <%= "<div class=\"box\">" %>
+                    <%= "<h3>" + @json_hash[service]["display-name"] + "</h3>" %>
+                    <%= "<div class=\"buttons\">" %>
+                        <% if @json_hash[service]["startable"] %>
+                            <%= "startable" %>
+                        <% end %>
+                        <% if @json_hash[service]["stoppable"] %>
+                            <%= "stoppable" %>
+                        <% end %>
+                        <% if @json_hash[service]["status"] %>
+                            <%= "status" %>
+                        <% end %>
+                        <% if @json_hash[service]["visitable"] %>
+                            <%= "visitable" %>
+                        <% end %>
+                    <%= "</div>" %>
+                <%= "</div>"%>
+            <% end %>
+        </div>
+    </body>
+</html>
